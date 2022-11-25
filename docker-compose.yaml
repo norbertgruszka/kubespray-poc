@@ -1,0 +1,12 @@
+version: "3"
+services:
+  kubespray:
+    image: kubespraypoc:latest
+    build:
+      context: .
+    command: ansible-playbook cluster.yml -i inventory/hosts.yml --become --become-user=root
+  #  stdin_open: true
+  #  tty: true
+  #  environment:
+    volumes:
+    - ./kubespray/inventory:/src/kubespray/inventory 

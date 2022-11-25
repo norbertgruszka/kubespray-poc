@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "ubuntu/trusty64"
+  config.vm.box = "ubuntu/focal64"
 
   (0..1).each do |i|
     config.vm.define "k8s-master-#{i}" do |node|
@@ -23,4 +23,13 @@ Vagrant.configure("2") do |config|
       end
     end
   end
+
+#  config.vm.provision "shell" do |s|
+#    s.inline = <<-SCRIPT
+#      export DEBIAN_FRONTEND=noninteractive
+#      apt-get update
+#      apt-get upgrade -y
+#      python3 --version
+#    SCRIPT
+#  end
 end

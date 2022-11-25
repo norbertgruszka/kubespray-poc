@@ -1,5 +1,0 @@
----
-- name: Ping Play
-  hosts: all
-  tasks:
-    - ansible.builtin.ping:

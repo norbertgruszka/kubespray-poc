@@ -10,3 +10,4 @@ services:
   #  environment:
     volumes:
     - ./kubespray/inventory:/src/kubespray/inventory 
+    - ./ssh:/src/kubespray/ssh

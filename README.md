@@ -2,16 +2,19 @@
 An example project deploying k8s cluster using kubespray
 
 # Depdendencies
-- Ansible
 - Vagrant
+- VirtualBox
+- Docker
 
 # Bootstrap
-## Spin up VMs using Vagrant
+Start by spinning up VMs using Vagrant
 ```
 vagrant up
 ```
-## Execute Ansible Playbook 
-```
-cd ansible
-ansible-playbook playbook.yml
-```
+After that, you can load a script with aliases. `. scripts/alias.sh`. With that you can build a docker containr using a `dcb` command and execute playbooks using ´play´ command. 
+
+If we're luck, that should be it. 
+
+## Access to the cluster 
+In order to get kubeconfig with administartive access, follow [this](https://github.com/kubernetes-sigs/kubespray/blob/master/docs/setting-up-your-first-cluster.md#access-the-kubernetes-cluster) tutorial.
+

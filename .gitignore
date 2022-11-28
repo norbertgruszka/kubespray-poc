@@ -8,3 +8,4 @@ venv/
 *.retry
 
 play_log_*.txt
+admin.conf

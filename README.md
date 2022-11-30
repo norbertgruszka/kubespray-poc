@@ -62,3 +62,9 @@ k8s-worker-3   Ready    <none>          7m      v1.24.6
 
 Congratulation! Your cluster is ready to be used! Get yourself a coffee. 
 
+# Cleanup
+To cleanup all VMs run 
+```
+$ vagrant destroy -f
+```
+

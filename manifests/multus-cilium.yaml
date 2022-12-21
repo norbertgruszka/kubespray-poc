@@ -1,0 +1,21 @@
+apiVersion: "k8s.cni.cncf.io/v1"
+kind: NetworkAttachmentDefinition
+metadata:
+  name: macvlan-conf
+spec:
+  config: '{
+    "name": "multusi-cni-network",
+    "cniVersion": "0.3.1",
+    "plugins": [
+      {
+        "cniVersion": "0.3.1",
+        "name": "multus-cni-network",
+        "type": "multus",
+        "kubeconfig": "/etc/kubernetes/cni/net.d/multus.d/multus.kubeconfig",
+        "confDir": "/etc/kubernetes/cni/net.d",
+        "clusterNetwork": "cilium",
+        "defaultNetworks": ["cbr0"],
+        "systemNamespaces": [""]
+      }
+    ]
+  }'

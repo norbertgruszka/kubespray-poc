@@ -1,5 +1,5 @@
 ---
-# cilium_version: "v1.12.1"
+cilium_version: "v1.12.1"
 
 # Log-level
 # cilium_debug: false
@@ -72,7 +72,7 @@
 
 # Deploy cilium even if kube_network_plugin is not cilium.
 # This enables to deploy cilium alongside another CNI to replace kube-proxy.
-# cilium_deploy_additionally: false
+cilium_deploy_additionally: true
 
 # Auto direct nodes routes can be used to advertise pods routes in your cluster
 # without any tunelling (with `cilium_tunnel_mode` sets to `disabled`).
@@ -98,15 +98,15 @@
 # cilium_native_routing_cidr_ipv6: ""
 
 # Enable transparent network encryption.
-# cilium_encryption_enabled: false
+cilium_encryption_enabled: false
 
 # Encryption method. Can be either ipsec or wireguard.
 # Only effective when `cilium_encryption_enabled` is set to true.
-# cilium_encryption_type: "ipsec"
+cilium_encryption_type: "ipsec"
 
 # Enable encryption for pure node to node traffic.
 # This option is only effective when `cilium_encryption_type` is set to `ipsec`.
-# cilium_ipsec_node_encryption: false
+cilium_ipsec_node_encryption: false
 
 # If your kernel or distribution does not support WireGuard, Cilium agent can be configured to fall back on the user-space implementation.
 # When this flag is enabled and Cilium detects that the kernel has no native support for WireGuard,
@@ -140,9 +140,9 @@
 
 # Hubble
 ### Enable Hubble without install
-# cilium_enable_hubble: false
+cilium_enable_hubble: true
 ### Enable Hubble Metrics
-# cilium_enable_hubble_metrics: false
+cilium_enable_hubble_metrics: false
 ### if cilium_enable_hubble_metrics: true
 # cilium_hubble_metrics: {}
 # - dns
@@ -152,9 +152,9 @@
 # - icmp
 # - http
 ### Enable Hubble install
-# cilium_hubble_install: false
+cilium_hubble_install: true
 ### Enable auto generate certs if cilium_hubble_install: true
-# cilium_hubble_tls_generate: false
+cilium_hubble_tls_generate: true
 
 # IP address management mode for v1.9+.
 # https://docs.cilium.io/en/v1.9/concepts/networking/ipam/

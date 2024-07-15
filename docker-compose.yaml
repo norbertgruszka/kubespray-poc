@@ -4,10 +4,10 @@ services:
     image: kubespraypoc:latest
     build:
       context: .
-    command: ansible-playbook cluster.yml -i inventory/hosts.yml --become --become-user=root
+    command: ansible-playbook cluster.yml -i inventory/k8s/hosts.yml --become --become-user=root
   #  stdin_open: true
   #  tty: true
   #  environment:
     volumes:
-    - ./kubespray/inventory:/src/kubespray/inventory 
+    - ./kubespray/inventory:/src/kubespray/inventory/k8s
     - ./ssh:/src/kubespray/ssh

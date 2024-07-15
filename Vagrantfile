@@ -4,7 +4,7 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/focal64"
 
-  (0..1).each do |i|
+  (0..0).each do |i|
     config.vm.define "k8s-master-#{i}" do |node|
       node.vm.network :private_network, ip: "192.168.60.#{i+32}"
       node.vm.hostname = "k8s-master-#{i}"
@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
     end
   end
 
-  (0..3).each do |i|
+  (0..0).each do |i|
     config.vm.define "k8s-worker-#{i}" do |node|
       node.vm.network :private_network, ip: "192.168.60.#{i+64}"
       node.vm.hostname = "k8s-worker-#{i}"
